@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sepp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sepp
+  template:
+    metadata:
+      labels:
+        app: sepp
+    spec:
+      containers:
+      - name: sepp
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
